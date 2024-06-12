@@ -59,13 +59,13 @@ For your first milestone, describe what your project is and how you plan to buil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-- For my starter project, I used an Arduino Uno microcontroller board. I connected a button as an input source, and a LED and a buzzer as output sources. I used a breadboard to configure the electric circuits.
-- When I click the button the light will turn on for a short time and the buzzer will play a short song. I used a press button which completes a circuit when it is pressed. I then used a basic if-statement to control when the output sources triggered. The code in my if statement sends a voltage through teh LED, causing it to light up. It also sends an alternating voltage through the piezo buzzer which causes the buzzer to emit sound. I controlled the sound with String() objects which stored the notes I wanted to play as well as integers for the length of the note. I denoted quarter notes with a "1", half notes with a "2", and so on. Finally, I stored the tempo of the song in an int variable. Combining the Strings and int caused the buzzer to play the song.
-- Some challenges I encountered while making my starter project were connecting code between my input and output sources, and connecting components in order for them to work. I also had to learn some basic formatting for C++ because I had never used the language before.
-- After completing the starter project, I plan to apply the information I learned about the Arduino system to my main project because it also uses the Arduino system. I will also use the information I learned about C++ to code for my main project.
+- For my starter project, I used an Arduino Uno microcontroller board. I connected a button as an input source, and a LED and a piezo buzzer as output sources. I used a breadboard to configure the electric circuits.
+- When I click the button the light will turn on for a short time and the buzzer will play a short song. I used a press button which completes a circuit when it is pressed. I then used a basic if-statement to control when the output sources are triggered. The code in my if statement sends a voltage through the LED, causing it to light up. It also sends an alternating voltage through the piezo buzzer which causes the buzzer to emit sound. The pitch and length of the notes are stored in String() objects and the tempo of the song is stored in an int variable. The code then combines the data from these variables to create the song.
+- The major challenge that I encountered while making my starter project was connecting code between my input and output sources. This problem was largely caused by my inexperience in C++. In order to write the code connecting my input and output sources I had to learn some basic formatting for C++.
+- After completing the starter project, I plan to apply the information I learned about the Arduino system to my main project because it also uses the Arduino system. I will also use the information I learned about C++ to write code for my main project.
 
 # Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resources to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
@@ -94,9 +94,9 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
 # Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
+Here are the websites where I learned to use the components and code needed for this project:
+- [Button](https://docs.arduino.cc/built-in-examples/digital/Button/)
+- [LED]([https://sviatil0.github.io/Sviatoslav_BSE/](https://docs.arduino.cc/built-in-examples/basics/Blink/))
+- [Piezo Buzzer](https://learn.sparkfun.com/tutorials/sik-experiment-guide-for-arduino---v32/experiment-11-using-a-piezo-buzzer)
 
 To watch the BSE tutorial on how to create a portfolio, click here.

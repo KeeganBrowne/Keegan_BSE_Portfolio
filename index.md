@@ -123,7 +123,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 # Other Resources/Examples
 Here are the websites where I learned to use the components and code needed for this project:
 - [Button](https://docs.arduino.cc/built-in-examples/digital/Button/)
-- [LED]([https://sviatil0.github.io/Sviatoslav_BSE/](https://docs.arduino.cc/built-in-examples/basics/Blink/))
+- [LED](https://docs.arduino.cc/built-in-examples/basics/Blink/)
 - [Piezo Buzzer](https://learn.sparkfun.com/tutorials/sik-experiment-guide-for-arduino---v32/experiment-11-using-a-piezo-buzzer)
 
 To watch the BSE tutorial on how to create a portfolio, click here.

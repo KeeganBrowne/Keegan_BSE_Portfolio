@@ -61,9 +61,9 @@ For your first milestone, describe what your project is and how you plan to buil
 
 For your first milestone, describe what your project is and how you plan to build it. You can include:
 - For my starter project, I used a button as an input source and a LED and a buzzer as output sources.
-- Technical progress you've made so far
+- When I click the button the light will turn on for a short time and the buzzer will play a short song.
 - Some challenges I encountered while making my starter project were connecting code between my input and output sources, and connecting components in order for them to work.
-- What your plan is to complete your project
+- After completing the starter project, I plan to apply the information I learned about the Arduino system to my main project because it also uses the Arduino system. I will also use the information I learned about C++ to code for my main project.
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 

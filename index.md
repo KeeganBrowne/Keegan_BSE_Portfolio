@@ -55,14 +55,39 @@ For your first milestone, describe what your project is and how you plan to buil
 
 # Starter Project
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pxzY77Jq7yg?si=mCKrMBZ17AjBoQ9w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - For my starter project, I used an Arduino Uno microcontroller board. I connected a button as an input source, and a LED and a piezo buzzer as output sources. I used a breadboard to configure the electric circuits.
-- When I click the button the light will turn on for a short time and the buzzer will play a short song. I used a press button which completes a circuit when it is pressed. I then used a basic if-statement to control when the output sources are triggered. The code in my if statement sends a voltage through the LED, causing it to light up. It also sends an alternating voltage through the piezo buzzer which causes the buzzer to emit sound. The pitch and length of the notes are stored in String() objects and the tempo of the song is stored in an int variable. The code then combines the data from these variables to create the song.
-- The major challenge that I encountered while making my starter project was connecting code between my input and output sources. This problem was largely caused by my inexperience in C++. In order to write the code connecting my input and output sources I had to learn some basic formatting for C++.
-- After completing the starter project, I plan to apply the information I learned about the Arduino system to my main project because it also uses the Arduino system. I will also use the information I learned about C++ to write code for my main project.
+- When I click the button the light will turn on for a short time and the buzzer will play a short song. I started by getting my input source to work. The basic idea for the physical aspect of the button is that when someone presses it, the button completes a circuit. 
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4i8ih_FvYVDng8bAJgY3nI_o6bEhU2KIx-Q&amp;s" jsaction="VQAsE" class="sFlh5c pT0Scc" alt="Arduino - Button | Arduino Tutorial" jsname="JuXqh" style="max-width: 1480px; position: absolute; visibility: hidden;" data-ilt="1718215223365">
+I then used some code from the tutorial I followed which read whether the circuit was complete or not. I also used basic if-statement to control when the output sources are triggered. I then focused on having the LED light up when the button was pressed. I found a function that sends a current  through the LED, causing it to light up. Finally, I worked on the piezo buzzer. I used code from a piezo button tutorial to send an alternating voltage through the piezo buzzer which causes the buzzer to emit sound. The code also allowed me to change the sound the buzzer produces by changing variables which store the pitch and length of the notes, and the tempo. Here is the code for the buzzer:
+
+  // Variables which store data about the song.
+  char notes[] = "cdfda ag cdfdg gf "; // a space represents a rest
+  int beats[] = {1,1,1,1,1,1,4,4,2,1,1,1,1,1,1,4,4,2};
+  int tempo = 113;
+  
+  //Loop to produce the song.
+  for (i = 0; i < songLength; i++) // step through the song arrays
+       {
+        duration = beats[i] * tempo;  // length of note/rest in ms
+
+        if (notes[i] == ' ')          // is this a rest?
+         {
+          delay(duration);            // then pause for a moment
+         }
+         else                          // otherwise, play the note
+         {
+          tone(buzzerPin, frequency(notes[i]), duration);
+          delay(duration);            // wait for tone to finish
+         }
+         delay(tempo/10);              // brief pause between notes
+       }
+
+Despite easily being able to change the sound from the buzzer, I chose to keep the original song from the code because it seemed more straightforward for my project.
+- The major challenge that I encountered while making my starter project was connecting code between my input and output sources. This was my first time coding in C++ and so I felt a learning curve but I perservered! I already knew basic logic behind coding, so learned some basic formatting for C++ and then was able to complete my code.
+- After completing the starter project, I plan to apply the information I learned about the Arduino system to my main project, the Knee Rehabilitation device, because it also uses the Arduino system.
+ I will also use the information I learned about C++ to write code for my main project.
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resources to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 

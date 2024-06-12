@@ -59,9 +59,8 @@ For your first milestone, describe what your project is and how you plan to buil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- For my starter project, I used a button as an input source and a LED and a buzzer as output sources.
-- When I click the button the light will turn on for a short time and the buzzer will play a short song.
+- For my starter project, I used an Arduino Uno microcontroller board. I connected a button as an input source, and a LED and a buzzer as output sources. I used a breadboard to configure the electric circuits.
+- When I click the button the light will turn on for a short time and the buzzer will play a short song. I used a press button which completes a circuit when it is pressed. I then used a basic if-statement to control when the output sources triggered. The code in my if statement sends a voltage through teh LED, causing it to light up. It also sends an alternating voltage through the piezo buzzer which causes the buzzer to emit sound. I controlled the sound with String() objects which stored the notes I wanted to play as well as integers for the length of the note. I denoted quarter notes with a "1", half notes with a "2", and so on. Finally, I stored the tempo of the song in an int variable. Combining the Strings and int caused the buzzer to play the song.
 - Some challenges I encountered while making my starter project were connecting code between my input and output sources, and connecting components in order for them to work.
 - After completing the starter project, I plan to apply the information I learned about the Arduino system to my main project because it also uses the Arduino system. I will also use the information I learned about C++ to code for my main project.
 

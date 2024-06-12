@@ -62,27 +62,29 @@ For your first milestone, describe what your project is and how you plan to buil
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4i8ih_FvYVDng8bAJgY3nI_o6bEhU2KIx-Q&amp;s" jsaction="VQAsE" class="sFlh5c pT0Scc" alt="Arduino - Button | Arduino Tutorial" jsname="JuXqh" style="max-width: 1480px; position: absolute; visibility: hidden;" data-ilt="1718215223365">
 I then used some code from the tutorial I followed which read whether the circuit was complete or not. I also used basic if-statement to control when the output sources are triggered. I then focused on having the LED light up when the button was pressed. I found a function that sends a current  through the LED, causing it to light up. Finally, I worked on the piezo buzzer. I used code from a piezo button tutorial to send an alternating voltage through the piezo buzzer which causes the buzzer to emit sound. The code also allowed me to change the sound the buzzer produces by changing variables which store the pitch and length of the notes, and the tempo. Here is the code for the buzzer:
 
-  // Variables which store data about the song.
-  char notes[] = "cdfda ag cdfdg gf "; // a space represents a rest
-  int beats[] = {1,1,1,1,1,1,4,4,2,1,1,1,1,1,1,4,4,2};
-  int tempo = 113;
-  
-  //Loop to produce the song.
-  for (i = 0; i < songLength; i++) // step through the song arrays
-       {
-        duration = beats[i] * tempo;  // length of note/rest in ms
+```c++
+// Variables which store data about the song.
+char notes[] = "cdfda ag cdfdg gf "; // a space represents a rest
+int beats[] = {1,1,1,1,1,1,4,4,2,1,1,1,1,1,1,4,4,2};
+int tempo = 113;
 
-        if (notes[i] == ' ')          // is this a rest?
-         {
-          delay(duration);            // then pause for a moment
-         }
-         else                          // otherwise, play the note
-         {
-          tone(buzzerPin, frequency(notes[i]), duration);
-          delay(duration);            // wait for tone to finish
-         }
-         delay(tempo/10);              // brief pause between notes
+//Loop to produce the song.
+for (i = 0; i < songLength; i++) // step through the song arrays
+     {
+      duration = beats[i] * tempo;  // length of note/rest in ms
+
+      if (notes[i] == ' ')          // is this a rest?
+       {
+        delay(duration);            // then pause for a moment
        }
+       else                          // otherwise, play the note
+       {
+        tone(buzzerPin, frequency(notes[i]), duration);
+        delay(duration);            // wait for tone to finish
+       }
+       delay(tempo/10);              // brief pause between notes
+     }
+```
 
 Despite easily being able to change the sound from the buzzer, I chose to keep the original song from the code because it seemed more straightforward for my project.
 - The major challenge that I encountered while making my starter project was connecting code between my input and output sources. This was my first time coding in C++ and so I felt a learning curve but I perservered! I already knew basic logic behind coding, so learned some basic formatting for C++ and then was able to complete my code.

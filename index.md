@@ -4,6 +4,7 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Keegan B | Carlmont HS | Electrical Engineering | Incoming Senior
+
 ![Faceshot Image](Keegan.jpg)
 <!---
 

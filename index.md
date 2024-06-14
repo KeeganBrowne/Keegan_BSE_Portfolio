@@ -61,7 +61,7 @@ For your first milestone, describe what your project is and how you plan to buil
 ## Description
 
   For my starter project, I chose the Bluestamp Arduino starter. I used an Arduino Uno microcontroller board. I connected a button as an input source, and a LED and a piezo buzzer as output sources. I used a breadboard to configure the electric circuits. When I click the button the light will turn on for a short time and the buzzer will play a short song. I started by getting my input source to work. The basic idea for the physical aspect of the button is that when someone presses it, the button completes a circuit. 
-![Button Diagram](operation-of-a-push-button-switch.png)
+![Button Diagram](operation-of-a-push-button-switch.pgn)
 |:--:| 
 |Above is a diagram of how a button works. In a four-pin press button, two pins are used for input and two are used for output. When the button is pressed, there is a connection established between two pairs of switches, allowing current to flow. Reference ArduinoGetStarted.com|
 

@@ -6,7 +6,7 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 | Keegan B | Carlmont HS | Electrical Engineering | Incoming Senior
 
 ![Faceshot Image](Keegan.jpg)
-<---
+<!---
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
@@ -50,7 +50,7 @@ For your first milestone, describe what your project is and how you plan to buil
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project
 
--->
+--->
 
 # Starter Project
 

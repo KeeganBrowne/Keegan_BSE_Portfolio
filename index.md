@@ -60,6 +60,7 @@ For your first milestone, describe what your project is and how you plan to buil
 ![Button Diagram](how-it-works-button.png)
 |:--:| 
 |Above is a diagram of how a button works. Reference ArduinoGetStarted.com|
+
 I then used some code from the tutorial I followed which read whether the circuit was complete or not. I also used basic if-statement to control when the output sources are triggered. I then focused on having the LED light up when the button was pressed. I found a function that sends a current through the LED, causing it to light up. Finally, I worked on the piezo buzzer. I used code from a piezo button tutorial to send an alternating voltage through the piezo buzzer which causes the buzzer to emit sound. The code also allowed me to change the sound the buzzer produces by changing variables which store the pitch and length of the notes, and the tempo. Here is the code for the buzzer:
 
 ```c++

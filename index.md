@@ -6,7 +6,7 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 | Keegan B | Carlmont HS | Electrical Engineering | Incoming Senior
 
 ![Faceshot Image](Keegan.jpg)
-<!---
+<---
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 

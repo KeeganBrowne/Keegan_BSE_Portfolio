@@ -44,12 +44,14 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your first milestone, describe what your project is and how you plan to build it. You can include:
 - An explanation about the different components of your project and how they will all integrate together
 - Technical progress you've made so far
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project
 
+My first step was to use a flex sensor to track how many degrees the knee bends. Sense Arduinos measure voltage and not resistance, I had to create a voltage divider circuit. This allowed me to track the resistance of the flex sensor by measuring the voltage drop between the two resistors. My next step was to correlate this voltage drop with the degree at which the flex sensor was bent. At first, I thought to measure the resistance at certain angles and correlate the data to find the bend angle. However, after some research, I found code on the flex sensor manufacturer's website which automatically correlates the resistance of the flex sensor with the angle at which it is bent. Currently, when I bend the flex sensor, I get a serial print of the resistance of the flex sensor and the corresponding angle at which the sensor is bent. While the angle that the code finds is still not perfectly accurate, I plan to recalibrate the software after I have the flex sensor attached to the knee brace. 
+
+I also hooked up an HC-05 Bluetooth module to wirelessly recieve data from the Arduino. Wiring the Bluetooth module is pretty simple with only four direct cables needed. I attached the ____ pin with the 5V power from the Arduino, connected the ground pin on the module with the gorund pit on the Arduino, the RX pin on the module with the TX pin on the Arduino, and the TX pin on the module with the RX pin on the Arduino. Initially, I was confused on why it was necesary to connect the RX and TX pins to their opposite, but after some brief reaserch I found that RX and TX are abbriviations for reveive and transmit, so what one device transmits, the other receives. After connecting the Arduino to power, the HC-05 Bluetooth module became discoverable for my computer and I was able to connect to it by entering the default pin '1234.' I then paired the module with my computer and was able to use the module as an input device by selecting Tools > Inputs > DSD HC-05 on teh ARduino IDE software. Sinse I use the Bluetooth module as an input source, I did not need any code for the module to work and send information to my computer. I was then able to reupload the code with he HC-05 input sourse selected as was able to wirelessly recieve the data from the flex sensor.
 --->
 
 # Starter Project

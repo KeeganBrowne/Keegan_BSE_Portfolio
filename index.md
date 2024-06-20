@@ -96,9 +96,7 @@ void loop()
 
 ## Conclusion
 
-The main challenge I faced while completing my first milestone was getting the Bluetooth module to work. I got the module work and send data to my computer a few times, but it was not consistent. To solve the problem, I had to do a lot of research about the device and ultimately found that my problem was mostly caused by giving the module 5V instead of 3.3V. I also found some basic code errors, but after fixing them, I was finally able to get the Bluetooth module consistenly working.
-
-My next steps for completing my project are getting my accelerometer and gyroscope working and connecting all of the components to the knee brace. I will then be able to wirelessly send the data from the flex sensor and gyroscope from the knee brace to my computer.
+The main challenge I faced while completing my first milestone was getting the Bluetooth module to work. I got the module work and send data to my computer a few times, but it was not consistent. To solve the problem, I had to do a lot of research about the device and ultimately found that my problem was mostly caused by giving the module 5V instead of 3.3V. I also found some basic code errors, but after fixing them, I was finally able to get the Bluetooth module consistenly working. My next steps for completing my project are getting my accelerometer and gyroscope working and connecting all of the components to the knee brace. I will then be able to wirelessly send the data from the flex sensor and gyroscope from the knee brace to my computer.
 
 
 # Starter Project

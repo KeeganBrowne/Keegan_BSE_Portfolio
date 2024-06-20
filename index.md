@@ -38,9 +38,13 @@ For your second milestone, explain what you've worked on since your previous mil
 - Previous challenges you faced that you overcame
 - What needs to be completed before your final milestone 
 
+--->
+
 # First Milestone
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+
+## Video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -49,10 +53,53 @@ For your second milestone, explain what you've worked on since your previous mil
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project
 
-My first step was to use a flex sensor to track how many degrees the knee bends. Sense Arduinos measure voltage and not resistance, I had to create a voltage divider circuit. This allowed me to track the resistance of the flex sensor by measuring the voltage drop between the two resistors. My next step was to correlate this voltage drop with the degree at which the flex sensor was bent. At first, I thought to measure the resistance at certain angles and correlate the data to find the bend angle. However, after some research, I found code on the flex sensor manufacturer's website which automatically correlates the resistance of the flex sensor with the angle at which it is bent. Currently, when I bend the flex sensor, I get a serial print of the resistance of the flex sensor and the corresponding angle at which the sensor is bent. While the angle that the code finds is still not perfectly accurate, I plan to recalibrate the software after I have the flex sensor attached to the knee brace. 
+## Description
 
-I also hooked up an HC-05 Bluetooth module to wirelessly recieve data from the Arduino. Wiring the Bluetooth module is pretty simple with only four direct cables needed. I attached the ____ pin with the 5V power from the Arduino, connected the ground pin on the module with the gorund pit on the Arduino, the RX pin on the module with the TX pin on the Arduino, and the TX pin on the module with the RX pin on the Arduino. Initially, I was confused on why it was necesary to connect the RX and TX pins to their opposite, but after some brief reaserch I found that RX and TX are abbriviations for reveive and transmit, so what one device transmits, the other receives. After connecting the Arduino to power, the HC-05 Bluetooth module became discoverable for my computer and I was able to connect to it by entering the default pin '1234.' I then paired the module with my computer and was able to use the module as an input device by selecting Tools > Inputs > DSD HC-05 on teh ARduino IDE software. Sinse I use the Bluetooth module as an input source, I did not need any code for the module to work and send information to my computer. I was then able to reupload the code with he HC-05 input sourse selected as was able to wirelessly recieve the data from the flex sensor.
---->
+My first step was to use a flex sensor to track how many degrees the knee bends. Since Arduinos measure voltage and not resistance, I had to create a voltage divider circuit. This allowed me to track the resistance of the flex sensor by measuring the voltage drop between the flex sensor and the static resistor. My next step was to correlate this voltage drop with the degree at which the flex sensor was bent. At first, I thought to measure the resistance at certain angles and correlate the data to find the bend angle. However, after some research, I found code on the flex sensor manufacturer's website that automatically correlates the resistance of the flex sensor with the angle at which it is bent. Currently, when I bend the flex sensor, I get a serial print of the resistance of the flex sensor and the corresponding angle at which the sensor is bent. While the angle that the code finds is still not perfectly accurate, I plan to recalibrate the software after I attach the flex sensor to the knee brace. 
+
+I also hooked up an HC-05 Bluetooth module to wirelessly receive data from the Arduino. Wiring the Bluetooth module is pretty simple with only four direct cables needed. I attached the VCC pin with the 3.3V power from the Arduino, connected the ground pin on the module with the ground pit on the Arduino, the RX pin on the module with the TX pin on the Arduino (pin 1), and the TX pin on the module with the RX pin on the Arduino (pin 2). Initially, I was confused about why it was necessary to connect the RX and TX pins to their opposite, but after some brief research I found that RX and TX are abriviations for receive and transmit, so what one device transmits, the other receives. After connecting the Arduino to power, the HC-05 Bluetooth module became discoverable for my computer and I was able to connect to it by entering the default pin '1234'. I then paired the module with my computer and was able to use the module as an input device by selecting Tools > Inputs > DSD HC-05 on the Arduino IDE software. Since I used the Bluetooth module as an input source, I did not need any code for the module to work and send information to my computer.
+
+## Code
+
+```c++
+const float VCC = 4.98; // Measured voltage of Ardunio 5V line
+const float R_DIV = 47500.0; // Measured resistance of 3.3k resistor
+
+const float STRAIGHT_RESISTANCE = 37300.0; // resistance when straight
+const float BEND_RESISTANCE = 90000.0; // resistance at 90 deg
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(0,INPUT); //flex sensor connected to analog 0
+  analogReference(DEFAULT);
+}
+
+void loop()
+{
+  int flexADC = analogRead(0);
+  float flexV = flexADC * VCC / 1023.0;
+  float flexR = R_DIV * (VCC / flexV - 1.0);
+  Serial.println("Resistance: " + String(flexR) + " ohms");
+  
+  // Use the calculated resistance to estimate the sensor's
+  // bend angle:
+  float angle = map(flexR, STRAIGHT_RESISTANCE, BEND_RESISTANCE, 0, 90.0);
+  Serial.println("Bend: " + String(angle) + " degrees");
+  Serial.println();
+  
+  Serial.flush();
+  
+  delay(500);//delay of 0.5 seconds
+}
+```
+
+## Conclusion
+
+The main challenge I faced while completing my first milestone was getting the Bluetooth module to work. I got the module work and send data to my computer a few times, but it was not consistent. To solve the problem, I had to do a lot of research about the device and ultimately found that my problem was mostly caused by giving the module 5V instead of 3.3V. I also found some basic code errors, but after fixing them, I was finally able to get the Bluetooth module consistenly working.
+
+My next steps for completing my project are getting my accelerometer and gyroscope working and connecting all of the components to the knee brace. I will then be able to wirelessly send the data from the flex sensor and gyroscope from the knee brace to my computer.
+
 
 # Starter Project
 

@@ -6,7 +6,7 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 | Keegan B | Carlmont HS | Electrical Engineering | Incoming Senior
 
 ![Faceshot Image](Keegan.jpg)
-<!---
+<!--
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need h.selp.**
 
@@ -38,7 +38,7 @@ For your second milestone, explain what you've worked on since your previous mil
 - Previous challenges you faced that you overcame
 - What needs to be completed before your final milestone 
 
---->
+-->
 
 # First Milestone
 
@@ -280,7 +280,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
---->
+-->
 
 # Other Resources/Examples
 Here are the websites where I learned to use the components and code needed for this project:

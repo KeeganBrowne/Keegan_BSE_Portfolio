@@ -51,12 +51,18 @@ For your second milestone, explain what you've worked on since your previous mil
 
 My first step was to use a flex sensor to track how many degrees the knee bends. Since Arduinos measure voltage and not resistance, I had to create a voltage divider circuit. This allowed me to track the resistance of the flex sensor by measuring the voltage drop between the flex sensor and the static resistor. 
 ![FlexSensor Image](flex-sensor-schematic.pgn)
-|:--:| 
-|Above is a schematic of the voltage divider circuit for the flex sensor. Reference Synthiam.com|
+//|:--:| 
+//|Above is a schematic of the voltage divider circuit for the flex sensor. Reference Synthiam.com|
+
+<table>
+  <tr>
+    <td>Above is a schematic of the voltage divider circuit for the flex sensor. Reference Synthiam.com</td>
+  </tr>
+</table>
 
 My next step was to correlate this voltage drop with the degree at which the flex sensor was bent. At first, I thought to measure the resistance at certain angles and correlate the data to find the bend angle. However, after some research, I found code on the flex sensor manufacturer's website that automatically correlates the resistance of the flex sensor with the angle at which it is bent. Currently, when I bend the flex sensor, I get a serial print of the resistance of the flex sensor and the corresponding angle at which the sensor is bent. While the angle that the code finds is still not perfectly accurate, I plan to recalibrate the software after I attach the flex sensor to the knee brace. 
 
-I also hooked up an HC-05 Bluetooth module to wirelessly receive data from the Arduino. Wiring the Bluetooth module is pretty simple with only four direct cables needed. I attached the VCC pin with the 3.3V power from the Arduino, connected the ground pin on the module with a ground pin on the Arduino, the RX pin on the module with the TX pin on the Arduino (pin 1), and the TX pin on the module with the RX pin on the Arduino (pin 0). Initially, I was confused about why it was necessary to connect the RX and TX pins to their opposite, but after some brief research I found that RX and TX are abbreviations for receive and transmit, so what one device transmits, the other receives. After connecting the Arduino to power, the HC-05 Bluetooth module became discoverable for my computer and I was able to connect to it by entering the default pin '1234'. I then paired the module with my computer and was able to use the module as an input device by selecting Tools > Inputs > DSD HC-05 on the Arduino IDE software. Since I used the Bluetooth module as an input source, I did not need any code for the module to work and send information to my computer.
+I also hooked up an HC-05 Bluetooth module to wirelessly receive data from the Arduino. Bluetooth ultra-high frequency radio waves, propagating at about round 2.4 gigahertz, to wirelessly send data to one another. Waves at this frequency are short-range radio waves, so Bluetooth had a limited range of about 10 meters. Wiring the Bluetooth module is pretty simple with only four direct cables needed. I attached the VCC pin with the 3.3V power from the Arduino, connected the ground pin on the module with a ground pin on the Arduino, the RX pin on the module with the TX pin on the Arduino (pin 1), and the TX pin on the module with the RX pin on the Arduino (pin 0). Initially, I was confused about why it was necessary to connect the RX and TX pins to their opposite, but after some brief research I found that RX and TX are abbreviations for receive and transmit, so what one device transmits, the other receives. After connecting the Arduino to power, the HC-05 Bluetooth module became discoverable for my computer and I was able to connect to it by entering the default pin '1234'. I then paired the module with my computer and was able to use the module as an input device by selecting Tools > Inputs > DSD HC-05 on the Arduino IDE software. Since I used the Bluetooth module as an input source, I did not need any code for the module to work and send information to my computer.
 
 ## Code
 
@@ -95,7 +101,7 @@ void loop()
 
 ## Conclusion
 
-The main challenge I faced while completing my first milestone was getting the Bluetooth module to work. I got the module working and sending data to my computer a few times, but it was not consistent. To solve the problem, I had to do a lot of research about the device and ultimately found that my problem was mostly caused by giving the module 5V instead of 3.3V. I also found some basic code errors, but after fixing them, I was finally able to get the Bluetooth module consistently working. My next steps for completing my project are getting my accelerometer and gyroscope working and connecting all of the components to the knee brace. I will then be able to wirelessly send the data from the flex sensor and gyroscope from the knee brace to my computer.
+The main challenge I faced while completing my first milestone was getting the Bluetooth module to work. I got the module working and sending data to my computer a few times, but it was not consistent. To solve the problem, I had to do a lot of research about the device and ultimately found that my problem was mostly caused by giving the module 5V instead of 3.3V to the VCC pin. I also had to forget and repair the module, but after completing these steps, I was finally able to get the Bluetooth module to consistently send the data from the flex sensor to my computer. My next steps for completing my project are getting my accelerometer and gyroscope working and connecting all of the components to the knee brace. I will then be able to wirelessly send the data from the flex sensor and gyroscope from the knee brace to my computer.
 
 
 # Starter Project

@@ -51,13 +51,11 @@ For your second milestone, explain what you've worked on since your previous mil
 
 My first step was to use a flex sensor to track how many degrees the knee bends. Since Arduinos measure voltage and not resistance, I had to create a voltage divider circuit. This allowed me to track the resistance of the flex sensor by measuring the voltage drop between the flex sensor and the static resistor. 
 ![FlexSensor Image](flex-sensor-schematic.pgn)
-//|:--:| 
-//|Above is a schematic of the voltage divider circuit for the flex sensor. Reference Synthiam.com|
 
 <table>
-  <tr>
+  <th>
     <td>Above is a schematic of the voltage divider circuit for the flex sensor. Reference Synthiam.com</td>
-  </tr>
+  </th>
 </table>
 
 My next step was to correlate this voltage drop with the degree at which the flex sensor was bent. At first, I thought to measure the resistance at certain angles and correlate the data to find the bend angle. However, after some research, I found code on the flex sensor manufacturer's website that automatically correlates the resistance of the flex sensor with the angle at which it is bent. Currently, when I bend the flex sensor, I get a serial print of the resistance of the flex sensor and the corresponding angle at which the sensor is bent. While the angle that the code finds is still not perfectly accurate, I plan to recalibrate the software after I attach the flex sensor to the knee brace. 

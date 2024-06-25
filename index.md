@@ -286,6 +286,10 @@ Here are the websites where I learned to use the components and code needed for 
 - [Button](https://docs.arduino.cc/built-in-examples/digital/Button/)
 - [LED](https://docs.arduino.cc/built-in-examples/basics/Blink/)
 - [Piezo Buzzer](https://learn.sparkfun.com/tutorials/sik-experiment-guide-for-arduino---v32/experiment-11-using-a-piezo-buzzer)
+- [Flex Sensor (Video)](https://www.youtube.com/watch?v=_tXWoplbqWo)
+- [HC-05 Bluetooth Module (Video)](https://youtu.be/aVhjlN-sy78?si=FTf0CLcM2PmxhGN6)
+- [Accelerometer](https://learn.adafruit.com/adafruit-lsm6ds3tr-c-lis3mdl-precision-9-dof-imu/arduino)
+- [Ticker](https://github.com/sstaub/Ticker/tree/main)
 
 <!---
 To watch the BSE tutorial on how to create a portfolio, click here.

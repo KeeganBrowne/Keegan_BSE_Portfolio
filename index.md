@@ -6,8 +6,8 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 | Keegan B | Carlmont HS | Electrical Engineering | Incoming Senior
 
 ![Faceshot Image](Keegan.jpg)
-<!--
 
+<!---
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need h.selp.**
 
 ![Headstone Image](logo.svg)
@@ -37,8 +37,7 @@ For your second milestone, explain what you've worked on since your previous mil
 - What has been surprising about the project so far
 - Previous challenges you faced that you overcame
 - What needs to be completed before your final milestone 
-
--->
+------->
 
 # First Milestone
 
@@ -288,4 +287,6 @@ Here are the websites where I learned to use the components and code needed for 
 - [LED](https://docs.arduino.cc/built-in-examples/basics/Blink/)
 - [Piezo Buzzer](https://learn.sparkfun.com/tutorials/sik-experiment-guide-for-arduino---v32/experiment-11-using-a-piezo-buzzer)
 
-<!--- To watch the BSE tutorial on how to create a portfolio, click here. --->
+<!---
+To watch the BSE tutorial on how to create a portfolio, click here.
+--->

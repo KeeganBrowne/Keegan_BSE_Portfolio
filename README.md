@@ -1,1 +1,1 @@
-This repository is a template for documenting BlueStamp Engineering projects. Users should replace this text with a description of what their project is and what their repository holds. 
+Repository for my Bluestamp Engineering project. I made a knee brace that tracks user's squat form and determines whether the user has good or bad form.

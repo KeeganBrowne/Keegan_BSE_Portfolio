@@ -218,41 +218,32 @@ Despite easily being able to change the sound from the buzzer, I chose to keep t
 ## Starter Project
 
 ```c++
-// constants won't change. They're used here to set pin numbers:
 const int buttonPin = 2;  // the number of the pushbutton pin
 
-// variables will change:
 int buttonState = 0;  // variable for reading the pushbutton status
 
 const int buzzerPin = 9;
 
-// Length must equal the total number of notes and spaces 
-
 const int songLength = 18;
 
 // Notes is an array of text characters corresponding to the notes
-// in your song. A space represents a rest (no tone)
+// in the song. A space represents a rest (no tone)
 
-char notes[] = "cdfda ag cdfdg gf "; // a space represents a rest
+char notes[] = "cdfda ag cdfdg gf ";
 
 // Beats is an array of values for each note and rest.
 // A "1" represents a quarter-note, 2 a half-note, etc.
-// Don't forget that the rests (spaces) need a length as well.
 
 int beats[] = {1,1,1,1,1,1,4,4,2,1,1,1,1,1,1,4,4,2};
 
 // The tempo is how fast to play the song.
-// To make the song play faster, decrease this value.
 
 int tempo = 113;
 
 void setup() {
-  // initialize the pushbutton pin as an input:
-  pinMode(buttonPin, INPUT);
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-  // initialize digital pin buzzerPin as an output.
-  pinMode(buzzerPin, OUTPUT);
+  pinMode(buttonPin, INPUT); // initialize the pushbutton pin as an input:
+  pinMode(LED_BUILTIN, OUTPUT); // initialize digital pin LED_BUILTIN as an output.
+  pinMode(buzzerPin, OUTPUT); // initialize digital pin buzzerPin as an output.
 }
 
 void loop() {
@@ -346,20 +337,13 @@ Ticker flexSensor(getFlexSensorData,200,0);
 //Instance Vars for Flex Sensor
 const float VCC = 5.08; // Measured voltage of Ardunio 5V line
 const float R_DIV = 47500.0; // Measured resistance of 3.3k resistor
-
 const float STRAIGHT_RESISTANCE = 29000.0; // resistance when straight
 const float BEND_RESISTANCE = 15000.0; // resistance at 90 deg
-
 float angle;
 
 //Instance Vars for Accelerometer
-float xAccel;
-float yAccel;
-float zAccel;
-
-float xGyro;
-float yGyro;
-float zGyro;
+float xAccel; float yAccel; float zAccel;
+float xGyro; float yGyro; float zGyro;
 
 const int buzzer = 9; //buzzer to arduino pin 9
 
@@ -376,10 +360,6 @@ void setup(void) {
  //Start Tickers
   accelerometer.start();
   flexSensor.start();
-
-  while (!Serial)
-    delay(10); // will pause Arduino Uno until serial console opens
-  Serial.println("Adafruit LSM6DS+LIS3MDL test!");
 
   // hardware I2C mode, can pass in address & alt Wire
   lsm6ds.begin_I2C();
@@ -427,7 +407,6 @@ void getAccelerometerData()
   lsm6ds.getEvent(&accel, &gyro, &temp);
   lis3mdl.getEvent(&mag);
 
-  // serial plotter friendly format
   xAccel = accel.acceleration.x;
   yAccel = accel.acceleration.y;
   zAccel = accel.acceleration.z;
@@ -445,7 +424,7 @@ void getFlexSensorData()
   //resistance:
   int flexADC = analogRead(0);
   float flexV = flexADC * VCC / 1023.0; //Voltage
-  float flexR = R_DIV * (VCC / flexV - 1.0); //Sensor resitance
+  float flexR = R_DIV * (VCC / flexV - 1.0); //Sensor resistance
   
   // Use the calculated & print resistance to estimate the
   // sensor's bend angle:

@@ -13,15 +13,25 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
   
 # Final Milestone
 
-##Video
+## Video
 
-##Description
+## Description
 
-##Code
+During this milestone, I fixed issues with my Bluetooth module and got the module to send the data from the accelerometer and flex sensor to my computer.
 
-##Conculsion
+Origionally, I connected my Bluetooth module to my computer and got it to send data to my computer in my first milestone. However, this process was inconsistent and completely stopped working during my second milestone. This led me to my decision to move Bluetooth to being my third milestone.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+My main challenge was getting my Bluetooth module to send the sensor data from the Arduino to my computer. This problem was frustrating because the module would connect to my computer but would not send data. I found that there were two main issues with my Bluetooth: I ran into the same interference as my accelerometer and I had a faulty module. To solve these two issues, I moved my accelerometer and used a new Bluetooth module.
+
+To take full advantage of the wireless capabilities of the Bluetooth, I sewed a pocket onto the side of the knee sleeve for the batter pack. This allowed me to comfortably use the Bluetooth even when I did not have a pocket in my pants or shorts.
+
+## Conculsion
+
+During my time at Bluestamp, my biggest challenges were solving my issues with Bluetooth and my accelerometer. My greatest triumphs came from fixing these issues and seeing my final project come together.
+
+While learning a lot of technical concepts about engineering like voltage dividers and I2C connection, the main things I learned at Bluestamp were more general concepts like how to troubleshoot hardware problems and how to combine different sensors and microcontrollers with software to make a finished project. Another important topic that I learned about is effective communication with others and use of Github. While having previous experience with using Github, I became much more compitent and advanced in Github during my time at Bluestamp. I learned how to add extra details like pictures and videos as well as text formating to increase the readability of my pages.
+
+My project has also
 
 For your final milestone, explain the outcome of your project. Key details to include are:
 - What you've accomplished since your previous milestone

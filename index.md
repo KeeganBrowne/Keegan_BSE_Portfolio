@@ -8,13 +8,18 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 ![Faceshot Image](Keegan.jpg)
 
 <!---
-**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need h.selp.**
 
 ![Headstone Image](logo.svg)
   
 # Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+##Video
+
+##Description
+
+##Code
+
+##Conculsion
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -487,7 +492,3 @@ Here are the websites where I learned to use the components and code needed for 
 - [HC-05 Bluetooth Module (Video)](https://youtu.be/aVhjlN-sy78?si=FTf0CLcM2PmxhGN6)
 - [Accelerometer](https://learn.adafruit.com/adafruit-lsm6ds3tr-c-lis3mdl-precision-9-dof-imu/arduino)
 - [Ticker](https://github.com/sstaub/Ticker/tree/main)
-
-<!---
-To watch the BSE tutorial on how to create a portfolio, click here.
---->

@@ -7,7 +7,6 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 
 ![Faceshot Image](Keegan.jpg)
 
-
   
 # Final Milestone
 
@@ -25,11 +24,11 @@ To take full advantage of the wireless capabilities of Bluetooth 2.0, I sewed a 
 
 ## Conculsion
 
-During my time at Bluestamp, my biggest challenges were getting my Bluetooth module and my accelerometer to work. My greatest triumphs came from fixing these issues and seeing my final project come together.
+During my time at Bluestamp, my biggest challenges were getting my Bluetooth module and my accelerometer to work. I ran into these challenges because I lacked experience troubleshooting electronics and diagnosing electrical problems. While my solutions to both of these problems were minor fixes, getting these two components to work were some of my greatest triumphs during my experience at Bluestamp. My other main triumph came from seeing my final project come together.
 
-While learning a lot of technical concepts about engineering like voltage dividers and I2C connection, the main things I learned at Bluestamp were more general concepts like how to troubleshoot hardware problems and how to combine different sensors and microcontrollers with software to make a finished project. Another important skill that I learned is how to effectively communicate with others using Github. While having previous experience with using Github, I became much more competent and advanced in Github during my time at Bluestamp. I learned how to add extra details like pictures and videos as well as text formating to increase the readability of my pages.
+While learning a lot of technical concepts about engineering like voltage dividers and I2C connection, the main things I learned at Bluestamp were more general concepts like how to troubleshoot hardware problems and how to combine different sensors and microcontrollers with software to make a finished project. Another important skill that I learned is how to effectively communicate with others using Github. While having previous experience with using Github, I became much more competent and advanced in Github during my time at Bluestamp. I learned how to add extra details like pictures and videos as well as text formatting to increase the readability of my pages.
 
-My project has also
+My project has also inspired curiosity in the wearable engineering field and how new wearables can help people prevent injuries and recover from past injuries. In the future, I hope to learn more about the industry and how current technologies can improve the design of some of these wearables.
 
 <!---
 

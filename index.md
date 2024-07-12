@@ -16,7 +16,7 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 
 During this milestone, I fixed issues with my Bluetooth module and got the module to send the data from the accelerometer and flex sensor to my computer.
 
-Origionally, I connected my Bluetooth module to my computer and got it to send data to my computer in my first milestone. However, this process was inconsistent and completely stopped working during my second milestone. This led me to my decision to move Bluetooth to being my third milestone.
+Originally, I connected my Bluetooth module to my computer and got it to send data to my computer in my first milestone. However, this process was inconsistent and completely stopped working during my second milestone. This led me to my decision to move Bluetooth to being my third milestone.
 
 ![Bluetooth Serial](bluetooth-serial-monitor.png)
 <table>

@@ -55,7 +55,7 @@ The next step was attaching all of the components to the knee sleeve. I first so
 
 My final step was to use data from the accelerometer and flex sensor to differentiate between good and bad squat form. I initially found this process to be very difficult because of inconsistency with the acceleration values when performing different squat errors. After some time, I decided to move the accelerometer to a location closer to the kneecap because the movements of the user bending their knees over their toes or bending their knees inward were more dramatic. After moving the accelerometer, it was surprisingly easy to find values for different errors in the user's squat. These errors were mainly visible in the y-acceleration and z-acceleration values. Using the sensor values, I created an if-conditional to Serial print a message notifying the user of the error with the squat and play a tone on a piezo buzzer to give them immediate feedback if they had bad form.
 
-![Flex Sensor and Accelerometer data](full-data-squat.png)
+![Flex Sensor and Accelerometer data](full-data-squat.png.png)
 <table>
   <tr>
     <td>Figure 2: Above is a graph picturing the data from the flex sensor and accelerometer during a squat with good form and a squat where the knees bend inwards. The squat with knees bending inwards has lower y-acceleration and z-acceleration values during the squat.</td>

@@ -40,32 +40,32 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 ## Description
 
-In my second milestone, I connected an accelerometer to my Arduino, attached all parts to the knee brace, and used the data from the accelerometer to determine good and bad squat forms.
+In my second milestone, used my Arduino to differentiate between good and bad squat forms and play a tone on a piezo buzzer to notify the user if they have incorrect squat form. I split this process into three main steps: wiring the accelerometer, attaching all components to the knee sleeve, and using data from the sensors to determine good and bad squat forms.
 
 My first step for this milestone was connecting my accelerometer. I used the Adafruit LSM6DS3TR-C + LIS3MDL accelerometer and gyroscope, as well as a STEMMA QT connector. I attached the red wire to the 5V pin, the black wire to a GND pin, the yellow wire to the SCL (Serial Clock Line) pin, and the blue wire to the SDA (Serial DAta line) pin. The module powers itself using the 5V and GND pins and transfers data using the SCL and SDA pins. The module uses I2C protocol to transfer data, so the SCL pin acts as a clock, with pulses from the Arduino at a regular level, and the SDA pin transfers one bit of data accordingly to the rising edge of the clock. After connecting the accelerometer to the Arduino, I had to download the libraries for the accelerometer and gyroscope. These libraries had example code that I used to Serial print the data from the accelerometer and gyroscope.
 
 ![I2C data transfer image](message-in-I2C.png)
 <table>
   <tr>
-    <td>Above is a schematic picturing what a byte transfer to data looks like. Each bit of data on the SDA line is sent on the rising edge of the clock provided by the SCL line. The master device, in my case the Arduino microcontroller, first identifies the peripheral intended to receive the data using a 7-bit address. The peripheral with the correct address then uses the read/write bit to determine whether it is intended to read or write and sends a confirmation bit to the master device. Finally, the master device sends back the byte of data it wants to transfer. This byte is followed by a confirmation bit from the slave as well as a stop condition. Reference Analog Devices.</td>
+    <td>Fingure 1: Above is a schematic picturing what a byte transfer to data looks like. Each bit of data on the SDA line is sent on the rising edge of the clock provided by the SCL line. The master device, in my case the Arduino microcontroller, first identifies the peripheral intended to receive the data using a 7-bit address. The peripheral with the correct address then uses the read/write bit to determine whether it is intended to read or write and sends a confirmation bit to the master device. Finally, the master device sends back the byte of data it wants to transfer. This byte is followed by a confirmation bit from the slave as well as a stop condition. Reference Analog Devices (see I2C reference at bottom).</td>
   </tr>
 </table>
 
-The next step was attaching all of the components to the knee sleeve. I first soldered the flex sensor, accelerometer, Bluetooth module, and piezo buzzer to a proto shield to ensure a strong connection betweeen components. However, after some testing, I had to move the accelerometer to both fix mechanical errors that its position caused and make it easier to determine good vs bad squat form. These mechanical errors were caused by too many wires next to each other creating magnetic fields when current flowed through them. This error was making parts work inconsistently and moving the accelerometer greatly increased how consistently the parts worked. I then had to sew all of the components to the knee brace. Depending on the component, I either sewed the component straight onto the knee brace (ex. the accelerometer) or used neoprene fabric to create a pocket for the components to rest in (ex. the flex sensor and Arduino).
+The next step was attaching all of the components to the knee sleeve. I first soldered the flex sensor, accelerometer, Bluetooth module, and piezo buzzer to a proto shield to ensure a strong connection betweeen components. However, after some testing, I had to move the accelerometer to both fix mechanical errors that its position caused and make it easier to determine good vs bad squat form. These wiring errors were caused by too many wires next to each other creating magnetic fields that distorted the current flowing through the wires. This error was making parts work inconsistently and moving the accelerometer greatly increased how consistently the parts worked. I then had to sew all of the components to the knee brace. Depending on the component, I either sewed the component straight onto the knee brace (ex. the accelerometer) or used neoprene fabric to create a pocket for the components to rest in (ex. the flex sensor and Arduino).
 
-My final step was to use data from the accelerometer and flex sensor to differentiate between good and bad squat form. I initially found this process to be very difficult because of inconsistency with the acceleration values when performing different squat errors. After some time, I decided to move the accelerometer to a location closer to the kneecap because the movements of the user bending their knees over their toes or bending their knees inward were more dramatic. After moving the accelerometer, it was surprisingly easy to find values for different errors in the user's squat. These errors were mainly visible in the y-acceleration and z-acceleration values. Using the sensor values, I created an if-statement to Serial print a message notifying the user of the error with the squat and play a tone on a piezo buzzer to give them immediate feedback if they had bad form.
+My final step was to use data from the accelerometer and flex sensor to differentiate between good and bad squat form. I initially found this process to be very difficult because of inconsistency with the acceleration values when performing different squat errors. After some time, I decided to move the accelerometer to a location closer to the kneecap because the movements of the user bending their knees over their toes or bending their knees inward were more dramatic. After moving the accelerometer, it was surprisingly easy to find values for different errors in the user's squat. These errors were mainly visible in the y-acceleration and z-acceleration values. Using the sensor values, I created an if-conditional to Serial print a message notifying the user of the error with the squat and play a tone on a piezo buzzer to give them immediate feedback if they had bad form.
 
 ![Flex Sensor and Accelerometer data](squat-data-with-angle.png)
 <table>
   <tr>
-    <td>Above is a graph picturing the data from the flex sensor and accelerometer during a squat with good form and a squat where the knees bend inwards. The squat with knees bending inwards has lower y-acceleration and z-acceleration values during the squat.</td>
+    <td>Figure 2: Above is a graph picturing the data from the flex sensor and accelerometer during a squat with good form and a squat where the knees bend inwards. The squat with knees bending inwards has lower y-acceleration and z-acceleration values during the squat.</td>
   </tr>
 </table>
 
 ![Accelerometer data](squat-data-without-angle.png)
 <table>
   <tr>
-    <td>The second graph illustrates the data from the accelerometer alone. This graph highlights the differences in y-acceleration and z-acceleration values during the squat.</td>
+    <td>Figure 3: The second graph illustrates the data from the accelerometer alone. This graph highlights the differences in y-acceleration and z-acceleration values during the squat.</td>
   </tr>
 </table>
 
@@ -247,7 +247,7 @@ My first step was to use a flex sensor to track how many degrees the knee bends.
 
 <table>
   <tr>
-    <td>Above is a schematic of the voltage divider circuit for the flex sensor. Reference Synthiam.com</td>
+    <td>Figure 1: Above is a schematic of the voltage divider circuit for the flex sensor. Reference Synthiam.com</td>
   </tr>
 </table>
 
@@ -312,7 +312,7 @@ My next steps for completing my project are getting my accelerometer and gyrosco
 
 <table>
   <tr>
-    <td>Above is a diagram of how a button works. In a four-pin press button, two pins are used for input and two are used for output. When the button is pressed, there is a connection established between two pairs of switches, allowing current to flow. Reference IQSdirectory.com</td>
+    <td>Figure 1 Above is a diagram of how a button works. In a four-pin press button, two pins are used for input and two are used for output. When the button is pressed, there is a connection established between two pairs of switches, allowing current to flow. Reference IQSdirectory.com</td>
   </tr>
 </table>
 
@@ -492,3 +492,4 @@ Here are the websites where I learned to use the components and code needed for 
 - [HC-05 Bluetooth Module (Video)](https://youtu.be/aVhjlN-sy78?si=FTf0CLcM2PmxhGN6)
 - [Accelerometer](https://learn.adafruit.com/adafruit-lsm6ds3tr-c-lis3mdl-precision-9-dof-imu/arduino)
 - [Ticker](https://github.com/sstaub/Ticker/tree/main)
+- [I2C](https://www.analog.com/en/resources/technical-articles/i2c-primer-what-is-i2c-part-1.html)

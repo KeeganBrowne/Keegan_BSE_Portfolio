@@ -209,10 +209,9 @@ Despite easily being able to change the sound from the buzzer, I chose to keep t
   The major challenge that I encountered while making my starter project was connecting code between my input and output sources. This was my first time coding in C++ and so I felt a learning curve but I perservered! I already knew basic logic behind coding, so learned some basic formatting for C++ and then was able to complete my code.
   After completing the starter project, I plan to apply the information I learned about the Arduino system to my main project, the Knee Rehabilitation device, because it also uses the Arduino system. I will also use the information I learned about C++ to write code for my main project.
 
-<!---
 
 # Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resources to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+![Knee Sleeve Schematic](kneeRehabSchematic.png)
 
 # Code 
 
@@ -320,9 +319,8 @@ int frequency(char note)
   return(0); 
 }
 ```
--->
 
-# Code
+## Main Project
 
 ```c++
 

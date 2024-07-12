@@ -18,6 +18,13 @@ During this milestone, I fixed issues with my Bluetooth module and got the modul
 
 Origionally, I connected my Bluetooth module to my computer and got it to send data to my computer in my first milestone. However, this process was inconsistent and completely stopped working during my second milestone. This led me to my decision to move Bluetooth to being my third milestone.
 
+![Bluetooth Serial](bluetooth-serial-monitor.png)
+<table>
+  <tr>
+    <td>Fingure 1: This image shows what the data sent from the Bluetooth module to the Serial monitor looks like.</td>
+  </tr>
+</table>
+
 My main challenge was getting my Bluetooth module to send the sensor data from the Arduino to my computer. This problem was frustrating because the module would connect to my computer but would not send data. I found that there were two main issues with my Bluetooth: I ran into the same interference as my accelerometer and I had a faulty module. To solve these two issues, I moved my accelerometer and used a new Bluetooth module.
 
 To take full advantage of the wireless capabilities of Bluetooth 2.0, I sewed a pocket onto the side of the knee sleeve for the battery pack. This allowed me to comfortably use Bluetooth even when I did not have a pocket in my pants or shorts. It also allowed me to travel up to 10 meters away from my computer with the module still sending data to my computer.

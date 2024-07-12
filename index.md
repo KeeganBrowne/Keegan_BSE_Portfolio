@@ -3,13 +3,11 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
-| Keegan B | Carlmont HS | Electrical Engineering | Incoming Senior
+| Keegan B | Carlmont HS | Computer Engineering | Incoming Senior
 
 ![Faceshot Image](Keegan.jpg)
 
-<!---
 
-![Headstone Image](logo.svg)
   
 # Final Milestone
 
@@ -23,15 +21,17 @@ Origionally, I connected my Bluetooth module to my computer and got it to send d
 
 My main challenge was getting my Bluetooth module to send the sensor data from the Arduino to my computer. This problem was frustrating because the module would connect to my computer but would not send data. I found that there were two main issues with my Bluetooth: I ran into the same interference as my accelerometer and I had a faulty module. To solve these two issues, I moved my accelerometer and used a new Bluetooth module.
 
-To take full advantage of the wireless capabilities of the Bluetooth, I sewed a pocket onto the side of the knee sleeve for the batter pack. This allowed me to comfortably use the Bluetooth even when I did not have a pocket in my pants or shorts.
+To take full advantage of the wireless capabilities of Bluetooth 2.0, I sewed a pocket onto the side of the knee sleeve for the battery pack. This allowed me to comfortably use Bluetooth even when I did not have a pocket in my pants or shorts. It also allowed me to travel up to 10 meters away from my computer with the module still sending data to my computer.
 
 ## Conculsion
 
-During my time at Bluestamp, my biggest challenges were solving my issues with Bluetooth and my accelerometer. My greatest triumphs came from fixing these issues and seeing my final project come together.
+During my time at Bluestamp, my biggest challenges were getting my Bluetooth module and my accelerometer to work. My greatest triumphs came from fixing these issues and seeing my final project come together.
 
-While learning a lot of technical concepts about engineering like voltage dividers and I2C connection, the main things I learned at Bluestamp were more general concepts like how to troubleshoot hardware problems and how to combine different sensors and microcontrollers with software to make a finished project. Another important topic that I learned about is effective communication with others and use of Github. While having previous experience with using Github, I became much more compitent and advanced in Github during my time at Bluestamp. I learned how to add extra details like pictures and videos as well as text formating to increase the readability of my pages.
+While learning a lot of technical concepts about engineering like voltage dividers and I2C connection, the main things I learned at Bluestamp were more general concepts like how to troubleshoot hardware problems and how to combine different sensors and microcontrollers with software to make a finished project. Another important skill that I learned is how to effectively communicate with others using Github. While having previous experience with using Github, I became much more competent and advanced in Github during my time at Bluestamp. I learned how to add extra details like pictures and videos as well as text formating to increase the readability of my pages.
 
 My project has also
+
+<!---
 
 For your final milestone, explain the outcome of your project. Key details to include are:
 - What you've accomplished since your previous milestone
@@ -78,164 +78,6 @@ My final step was to use data from the accelerometer and flex sensor to differen
     <td>Figure 3: The second graph illustrates the data from the accelerometer alone. This graph highlights the differences in y-acceleration and z-acceleration values during the squat.</td>
   </tr>
 </table>
-
-## Code
-
-```c++
-// SPDX-FileCopyrightText: 2020 Kattni Rembor for Adafruit Industries
-//
-// SPDX-License-Identifier: MIT
-
-//Accel: X(), Y(), Z (up +, down -)
-//Gyro: X(), Y(), Z(Counterclockwise +, Clockwise -)
-
-
-//Imports for Accelerometer/Gyroscope
-#include <Adafruit_LSM6DS3TRC.h>
-Adafruit_LSM6DS3TRC lsm6ds;
-
-#include <Adafruit_LIS3MDL.h>
-Adafruit_LIS3MDL lis3mdl;
-
-//Tickers
-#include "Ticker.h"
-void getAccelerometerData();
-void getFlexSensorData();
-Ticker accelerometer(getAccelerometerData,200,0);
-Ticker flexSensor(getFlexSensorData,200,0);
-
-
-//Instance Vars for Flex Sensor
-const float VCC = 5.08; // Measured voltage of Ardunio 5V line
-const float R_DIV = 47500.0; // Measured resistance of 3.3k resistor
-
-const float STRAIGHT_RESISTANCE = 29000.0; // resistance when straight
-const float BEND_RESISTANCE = 15000.0; // resistance at 90 deg
-
-float angle;
-
-//Instance Vars for Accelerometer
-float xAccel;
-float yAccel;
-float zAccel;
-
-float xGyro;
-float yGyro;
-float zGyro;
-
-const int buzzer = 9; //buzzer to arduino pin 9
-
-void setup(void) {
-  Serial.begin(9600); //set baud rate
-
- //Pieze buzzer setup
-  pinMode(buzzer,OUTPUT);
-
- //Flex Sensor setup
-  pinMode(0,INPUT); //flex sensor connected to analog 0
-  analogReference(DEFAULT);
-
- //Start Tickers
-  accelerometer.start();
-  flexSensor.start();
-
-  while (!Serial)
-    delay(10); // will pause Arduino Uno until serial console opens
-  Serial.println("Adafruit LSM6DS+LIS3MDL test!");
-
-  bool lsm6ds_success, lis3mdl_success;
-
-  // hardware I2C mode, can pass in address & alt Wire
-
-  lsm6ds_success = lsm6ds.begin_I2C();
-  lis3mdl_success = lis3mdl.begin_I2C();
-
-  if (!lsm6ds_success){
-    Serial.println("Failed to find LSM6DS chip");
-  }
-  if (!lis3mdl_success){
-    Serial.println("Failed to find LIS3MDL chip");
-  }
-  if (!(lsm6ds_success && lis3mdl_success)) {
-    while (1) {
-      delay(10);
-    }
-  }
-
-  Serial.println("LSM6DS and LIS3MDL Found!");
-
-}
-
-void loop() {
- //Accelerometer Data Update
-  accelerometer.update();
-
- //Flex Sensor update
-  flexSensor.update();
-
-  bool hasSquated = false;
-  bool isBadForm = false;
- //Set squat form
- if(angle > 45) //Check if squat detected
- {
-  hasSquated = true;
-  isBadForm = false;
-  if(angle > 60.0 && yAccel < -3) //Checks if knees bending inwards
-  {
-    Serial.println("Knees bending inwards");
-    tone(buzzer,440,100); //Play buzzer sound
-    isBadForm = true;
-    delay(1000);
-  }
-  else //Good squat form
-  {
-    noTone(buzzer); //Stop any buzzer sound
-  }
-  delay(100); //Delay inbetween squats
- }
- if(!isBadForm && hasSquated)
-  {
-    Serial.println("Good form!");
-  }
-}
-
-void getAccelerometerData()
-{
-  sensors_event_t accel, gyro, mag, temp;
-
-  // Get new normalized sensor events
-  lsm6ds.getEvent(&accel, &gyro, &temp);
-  lis3mdl.getEvent(&mag);
-
-  // serial plotter friendly format
-  xAccel = accel.acceleration.x;
-  yAccel = accel.acceleration.y;
-  zAccel = accel.acceleration.z;
-
-  xGyro = gyro.gyro.x;
-  yGyro = gyro.gyro.y;
-  zGyro = gyro.gyro.z;
-
-  delayMicroseconds(10000);
-}
-
-void getFlexSensorData()
-{
-  //Use Voltage from Arduino to calculate the flex sensor's
-  //resistance:
-  int flexADC = analogRead(0);
-  float flexV = flexADC * VCC / 1023.0; //Voltage
-  float flexR = R_DIV * (VCC / flexV - 1.0); //Sensor resitance
-  
-  // Use the calculated & print resistance to estimate the
-  // sensor's bend angle:
-  angle = map(flexR, STRAIGHT_RESISTANCE, BEND_RESISTANCE, 0, 90.0);
-  Serial.print(String(angle));
-  Serial.println();
-  
-  Serial.flush();
-}
-```
 
 ## Conclusion
 
@@ -473,6 +315,144 @@ int frequency(char note)
 }
 ```
 -->
+
+# Code
+
+```c++
+
+// SPDX-FileCopyrightText: 2020 Kattni Rembor for Adafruit Industries
+//
+// SPDX-License-Identifier: MIT
+
+
+//Imports for Accelerometer/Gyroscope
+#include <Adafruit_LSM6DS3TRC.h>
+Adafruit_LSM6DS3TRC lsm6ds;
+
+#include <Adafruit_LIS3MDL.h>
+Adafruit_LIS3MDL lis3mdl;
+
+//Tickers
+#include "Ticker.h"
+void getAccelerometerData();
+void getFlexSensorData();
+Ticker accelerometer(getAccelerometerData,200,0);
+Ticker flexSensor(getFlexSensorData,200,0);
+
+//Instance Vars for Flex Sensor
+const float VCC = 5.08; // Measured voltage of Ardunio 5V line
+const float R_DIV = 47500.0; // Measured resistance of 3.3k resistor
+
+const float STRAIGHT_RESISTANCE = 29000.0; // resistance when straight
+const float BEND_RESISTANCE = 15000.0; // resistance at 90 deg
+
+float angle;
+
+//Instance Vars for Accelerometer
+float xAccel;
+float yAccel;
+float zAccel;
+
+float xGyro;
+float yGyro;
+float zGyro;
+
+const int buzzer = 9; //buzzer to arduino pin 9
+
+void setup(void) {
+  Serial.begin(9600); //set baud rate
+
+ //Pieze buzzer setup
+  pinMode(buzzer,OUTPUT);
+
+ //Flex Sensor setup
+  pinMode(0,INPUT); //flex sensor connected to analog 0
+  analogReference(DEFAULT);
+
+ //Start Tickers
+  accelerometer.start();
+  flexSensor.start();
+
+  while (!Serial)
+    delay(10); // will pause Arduino Uno until serial console opens
+  Serial.println("Adafruit LSM6DS+LIS3MDL test!");
+
+  // hardware I2C mode, can pass in address & alt Wire
+  lsm6ds.begin_I2C();
+  lis3mdl.begin_I2C();
+}
+
+void loop() {
+ //Accelerometer Data Update
+  accelerometer.update();
+
+ //Flex Sensor update
+  flexSensor.update();
+
+  bool hasSquated = false;
+  bool isBadForm = false;
+ //Set squat form
+ if(angle > 45) //Check if squat detected
+ {
+  hasSquated = true;
+  isBadForm = false;
+  if(angle > 60.0 && yAccel < -3) //Checks if knees bending inwards
+  {
+    Serial.println("Knees bending inwards");
+    tone(buzzer,440,100); //Play buzzer sound
+    isBadForm = true;
+    delay(1000);
+  }
+  else //Good squat form
+  {
+    noTone(buzzer); //Stop any buzzer sound
+  }
+  delay(100); //Delay inbetween squats
+ }
+ if(!isBadForm && hasSquated)
+  {
+    Serial.println("Good form!");
+  }
+}
+
+void getAccelerometerData()
+{
+  sensors_event_t accel, gyro, mag, temp;
+
+  // Get new normalized sensor events
+  lsm6ds.getEvent(&accel, &gyro, &temp);
+  lis3mdl.getEvent(&mag);
+
+  // serial plotter friendly format
+  xAccel = accel.acceleration.x;
+  yAccel = accel.acceleration.y;
+  zAccel = accel.acceleration.z;
+
+  xGyro = gyro.gyro.x;
+  yGyro = gyro.gyro.y;
+  zGyro = gyro.gyro.z;
+
+  delayMicroseconds(10000);
+}
+
+void getFlexSensorData()
+{
+  //Use Voltage from Arduino to calculate the flex sensor's
+  //resistance:
+  int flexADC = analogRead(0);
+  float flexV = flexADC * VCC / 1023.0; //Voltage
+  float flexR = R_DIV * (VCC / flexV - 1.0); //Sensor resitance
+  
+  // Use the calculated & print resistance to estimate the
+  // sensor's bend angle:
+  angle = map(flexR, STRAIGHT_RESISTANCE, BEND_RESISTANCE, 0, 90.0);
+  Serial.print(String(angle));
+  Serial.println();
+  
+  Serial.flush();
+}
+
+```
 
 # Bill of Materials
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.

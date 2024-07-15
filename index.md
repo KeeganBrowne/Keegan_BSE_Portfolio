@@ -1,5 +1,5 @@
 # Knee Rehabilitation Device
-I am building a knee rehabilitation device. The device tracks squat form and tells the user if they are making common errors with squatting like their knees bending inwards. To do this, I use a flex sensor and accelerometer to track the movement and bend of the user's knee. I then use a Bluetooth monitor to wirelessly send the data from my Arduino microcontroller to a computer where the data is processed. The computer then prints out a message corresponding to the user's squat form.
+I am building a knee rehabilitation device. The device tracks squat form and tells the user if they are making common errors with squatting like their knees bending inwards. To do this, I use a flex sensor and accelerometer to track the movement and bend of the user's knee. I then use a Bluetooth monitor to wirelessly send the data from my Arduino microcontroller to a computer where the data is processed. The computer then prints out a message corresponding to the user's squat form and turns on a piezo buzzer to notify the user if they have incorrect squat form.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -11,6 +11,8 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 # Final Milestone
 
 ## Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/McmnA-4cf2E?si=OG5oGJ6EvD0ofqNl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Description
 
@@ -37,15 +39,6 @@ While learning a lot of technical concepts about engineering like voltage divide
 
 My project has also inspired curiosity in the wearable engineering field and how new wearables can help people prevent injuries and recover from past injuries. In the future, I hope to learn more about the industry and how current technologies can improve the design of some of these wearables.
 
-<!---
-
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
-
-------->
 
 # Second Milestone
 
@@ -63,7 +56,7 @@ My first step for this milestone was connecting my accelerometer. I used the Ada
 ![I2C data transfer image](message-in-I2C.png)
 <table>
   <tr>
-    <td>Fingure 1: Above is a schematic picturing what a byte transfer to data looks like. Each bit of data on the SDA line is sent on the rising edge of the clock provided by the SCL line. The master device, in my case the Arduino microcontroller, first identifies the peripheral intended to receive the data using a 7-bit address. The peripheral with the correct address then uses the read/write bit to determine whether it is intended to read or write and sends a confirmation bit to the master device. Finally, the master device sends back the byte of data it wants to transfer. This byte is followed by a confirmation bit from the slave as well as a stop condition. Reference Analog Devices (see I2C reference at bottom).</td>
+    <td>Fingure 2: Above is a schematic picturing what a byte transfer to data looks like. Each bit of data on the SDA line is sent on the rising edge of the clock provided by the SCL line. The master device, in my case the Arduino microcontroller, first identifies the peripheral intended to receive the data using a 7-bit address. The peripheral with the correct address then uses the read/write bit to determine whether it is intended to read or write and sends a confirmation bit to the master device. Finally, the master device sends back the byte of data it wants to transfer. This byte is followed by a confirmation bit from the slave as well as a stop condition. Reference Analog Devices (see I2C reference at bottom).</td>
   </tr>
 </table>
 
@@ -74,14 +67,14 @@ My final step was to use data from the accelerometer and flex sensor to differen
 ![Flex Sensor and Accelerometer data](full-data-squat.png)
 <table>
   <tr>
-    <td>Figure 2: Above is a graph picturing the data from the flex sensor and accelerometer during a squat with good form and a squat where the knees bend inwards. The squat with knees bending inwards has lower y-acceleration and z-acceleration values during the squat.</td>
+    <td>Figure 3: Above is a graph picturing the data from the flex sensor and accelerometer during a squat with good form and a squat where the knees bend inwards. The squat with knees bending inwards has lower y-acceleration and z-acceleration values during the squat.</td>
   </tr>
 </table>
 
 ![Accelerometer data](squat-data-without-angle.png)
 <table>
   <tr>
-    <td>Figure 3: The second graph illustrates the data from the accelerometer alone. This graph highlights the differences in y-acceleration and z-acceleration values during the squat.</td>
+    <td>Figure 4: The second graph illustrates the data from the accelerometer alone. This graph highlights the differences in y-acceleration and z-acceleration values during the squat.</td>
   </tr>
 </table>
 
@@ -105,7 +98,7 @@ My first step was to use a flex sensor to track how many degrees the knee bends.
 
 <table>
   <tr>
-    <td>Figure 1: Above is a schematic of the voltage divider circuit for the flex sensor. Reference Synthiam.com</td>
+    <td>Figure 5: Above is a schematic of the voltage divider circuit for the flex sensor. Reference Synthiam.com</td>
   </tr>
 </table>
 
@@ -170,7 +163,7 @@ My next steps for completing my project are getting my accelerometer and gyrosco
 
 <table>
   <tr>
-    <td>Figure 1 Above is a diagram of how a button works. In a four-pin press button, two pins are used for input and two are used for output. When the button is pressed, there is a connection established between two pairs of switches, allowing current to flow. Reference IQSdirectory.com</td>
+    <td>Figure 6: Above is a diagram of how a button works. In a four-pin press button, two pins are used for input and two are used for output. When the button is pressed, there is a connection established between two pairs of switches, allowing current to flow. Reference IQSdirectory.com</td>
   </tr>
 </table>
 

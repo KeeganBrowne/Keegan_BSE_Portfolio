@@ -93,7 +93,7 @@ My final step will be getting my Bluetooth module to work consistently and send 
 
 ## Description
 
-My first step was to use a flex sensor to track how many degrees the knee bends. Since Arduinos measure voltage and not resistance, I had to create a voltage divider circuit. The voltage divider formula is: V<sub>out</sub> = Z<sub>2</sub> / (Z<sub>1</sub> + Z<sub>2</sub>) * V<sub>in</sub>. Using this formula, I was able to calculate the resistance of the flex sensor because V in and Z1 are constants, so Z2 and V out are directly proportional to each other.
+My first step was to use a flex sensor to track how many degrees the knee bends. Since Arduinos measure voltage and not resistance, I had to create a voltage divider circuit. The voltage divider formula is: V<sub>out</sub> = Z<sub>2</sub> / (Z<sub>1</sub> + Z<sub>2</sub>) * V<sub>in</sub>. Using this formula, I was able to calculate the resistance of the flex sensor because V<sub>in</sub> and Z<sub>1</sub> are constants, so Z<sub>2</sub> and V<sub>out</sub> are directly proportional to each other.
  ![FlexSensor Image](flex-sensor-schematic.pgn)
 
 <table>

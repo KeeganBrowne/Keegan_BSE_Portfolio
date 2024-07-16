@@ -446,7 +446,6 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Piezo Buzzer | Notify the user when they have incorrect form | $1.50 | <a href="https://www.adafruit.com/product/160"> Link </a> |
 | 10k Ohm Resistor | Creating a voltage divider | $0.75 | <a href="https://www.adafruit.com/product/2784"> Link </a> |
 | Wire | Connecting sensors to Arduino | $2.95 | <a href="https://www.adafruit.com/product/288"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
 
 # Other Resources/Examples

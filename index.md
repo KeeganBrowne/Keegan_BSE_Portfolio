@@ -1,5 +1,5 @@
 # Knee Rehabilitation Device
-I am building a knee rehabilitation device. The device tracks squat form and tells the user if they are making common errors with squatting like their knees bending inwards. To do this, I use a flex sensor and accelerometer to track the movement and bend of the user's knee. I then use a Bluetooth module to wirelessly send the data from my Arduino microcontroller to a computer where the data is processed. The computer then prints out a message corresponding to the user's squat form and turns on a piezo buzzer to notify the user if they have incorrect squat form.
+I am building a knee rehabilitation device. The device tracks squat form and tells the user if they are making common errors with squatting like their knees bending inwards. To do this, I use a flex sensor and accelerometer to track the movement and bend of the user's knee. I then use a Bluetooth module to wirelessly send the data from my Arduino microcontroller to a computer that processes the data. The computer then prints out a message corresponding to the user's squat form and turns on a piezo buzzer to notify the user if they have incorrect squat form.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|

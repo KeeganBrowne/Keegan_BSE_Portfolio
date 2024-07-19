@@ -31,7 +31,7 @@ My main challenge was getting my Bluetooth module to send the sensor data from t
 
 To take full advantage of the wireless capabilities of Bluetooth 2.0, I sewed a pocket onto the side of the knee sleeve for the battery pack. This allowed me to comfortably use Bluetooth even when I did not have a pocket in my pants or shorts. It also allowed me to travel up to 10 meters away from my computer with the module still sending data to my computer.
 
-## Conculsion
+## Conclusion
 
 During my time at Bluestamp, my biggest challenges were getting my Bluetooth module and my accelerometer to work. I ran into these challenges because I lacked experience troubleshooting electronics and diagnosing electrical problems. While my solutions to both of these problems were minor fixes, getting these two components to work were some of my greatest triumphs during my experience at Bluestamp. My other main triumph came from seeing my final project come together.
 

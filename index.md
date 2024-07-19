@@ -7,7 +7,7 @@ I am building a knee rehabilitation device. The device tracks squat form and tel
 
 ![Faceshot Image](Keegan.jpg)
 
-  
+
 # Final Milestone
 
 ## Video

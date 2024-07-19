@@ -80,7 +80,7 @@ My final step was to use data from the accelerometer and flex sensor to differen
 
 ## Conclusion
 
-My main challenges during this milestone were getting my accelerometer to work consistently and correlating the data from the accelerometer and flex sensor with squat form. It was difficult to diagnose the error with my accelerometer because from a strictly electrical and software perspective, everything should have worked. It was not until after resoldering the accelerometer and double-checking its connection that I learned that the accelerometer's consistency problem was likely due to the magnetic fields that the current-carrying wires created. Luckily after diagnosing this error, I was quickly able to solve it by going back to using a STEMMA QT connecter with the accelerometer. My other main challenge was correlating data to the user's squat form. Origionally, this issue was caused by bad placement of the accelerometer combined with over-specific data collection. I resolved this error by moving the accelerometer further away from the other components on the knee brace.
+My main challenges during this milestone were getting my accelerometer to work consistently and correlating the data from the accelerometer and flex sensor with squat form. It was difficult to diagnose the error with my accelerometer because from a strictly electrical and software perspective, everything should have worked. It was not until after resoldering the accelerometer and double-checking its connection that I learned that the accelerometer's consistency problem was likely due to the magnetic fields that the current-carrying wires created. Luckily after diagnosing this error, I was quickly able to solve it by going back to using a STEMMA QT connecter with the accelerometer. My other main challenge was correlating data to the user's squat form. Originally, this issue was caused by the location of the accelerometer on the knee sleeve combined with over-specific data collection. I resolved this error by moving the accelerometer further away from the other components on the knee brace.
 My final step will be getting my Bluetooth module to work consistently and send data from the Arduino to my computer.
 
 
@@ -431,8 +431,6 @@ void getFlexSensorData()
 ```
 
 # Bill of Materials
-Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
